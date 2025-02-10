@@ -8,6 +8,12 @@
 </head>
 <body>
 
+  <!-- Loading Screen -->
+  <div class="loader">
+    <span class="loader-text">loading</span>
+    <span class="load"></span>
+  </div>
+
   <header>
     <div class="header-content">
       <div class="logo-left">
@@ -44,5 +50,11 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    // JavaScript to hide the loader once the page is fully loaded
+    window.onload = function() {
+      document.querySelector('.loader').style.display = 'none'; // Hide the loader
+    };
+  </script>
 </body>
 </html>
