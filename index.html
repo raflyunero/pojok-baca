@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Buku Pojok Baca</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="logo-left">
+        <img src="Logo HD.png" alt="Logo Pojok Baca">
+      </div>
+      <h1>KATALOG BUKU PERPUSTAKAN</h1>
+      <div class="logo-right">
+        <img src="Logo Undip Undip.png" alt="Logo Perpustakaan SD">
+      </div>
+    </div>
+  </header>
+
+  <section id="categories">
+    <button onclick="showCategory('education')">Pendidikan</button>
+    <button onclick="showCategory('entertainment')">Hiburan</button>
+    <button onclick="showCategory('nature')">Alam</button>
+    <button onclick="showCategory('history')">Sejarah</button>
+    <button onclick="showCategory('sports')">Olahraga</button>
+    <button onclick="showCategory('crafts')">Keterampilan</button>
+    <button onclick="showCategory('health')">Kesehatan</button>
+    <button onclick="showCategory('religion')">Agama</button>
+  </section>
+
+  <section id="catalog">
+    <!-- Books will be displayed here based on the selected category -->
+  </section>
+
+  <div id="bookInfoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeBookInfo()">&times;</span>
+      <h2 id="bookTitle"></h2>
+      <p id="bookDescription"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
