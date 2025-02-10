@@ -1,127 +1,137 @@
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  
-  header {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 0; /* Adjust padding for header */
-    text-align: center;
-    height: 70px; /* Set fixed height for the header */
-    display: flex;
-    align-items: center; /* Vertically align the content */
-    justify-content: center; /* Center the content horizontally */
-  }
-  
-  .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  h1 {
-    flex-grow: 1;
-    font-size: 24px;
-    margin: 0;
-    text-align: center;
-  }
-  
-  .logo-left img,
-  .logo-right img {
-    width: 90px; /* Adjust logo size */
-    height: auto;
-  }
-  
-  #categories {
-    text-align: center;
-    margin: 20px;
-  }
-  
-  #categories button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  #categories button:hover {
-    background-color: #0056b3;
-  }
-  
-  #catalog {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-  }
-  
-  .book {
-    background-color: #fff;
-    border-radius: 10px;
-    margin: 10px;
-    width: 200px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-  }
-  
-  .book img {
-    width: 100%;
-    height: auto;
-    border-bottom: 2px solid #007bff;
-  }
-  
-  .book h3 {
-    margin: 10px 0;
-    font-size: 18px;
-  }
-  
-  .book p {
-    color: #555;
-    font-size: 14px;
-  }
-  
-  /* Modal styles */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 60%;
-  }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  box-sizing: border-box; /* Apply box-sizing globally */
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 10px; /* Adjust padding for header */
+  text-align: center;
+  height: auto; /* Make header height flexible */
+  display: flex;
+  align-items: center; /* Vertically align the content */
+  justify-content: center; /* Center the content horizontally */
+  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+h1 {
+  flex-grow: 1;
+  font-size: 2rem; /* Auto size font */
+  margin: 0;
+  text-align: center;
+  word-wrap: break-word; /* Ensure text wraps properly on small screens */
+}
+
+.logo-left img,
+.logo-right img {
+  width: 20vw; /* Auto resize logo based on viewport width */
+  height: auto;
+  max-width: 90px; /* Ensure logos do not get too large */
+}
+
+#categories {
+  text-align: center;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+#categories button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem; /* Make button font size responsive */
+  min-width: 120px; /* Minimum width for buttons */
+}
+
+#categories button:hover {
+  background-color: #0056b3;
+}
+
+#catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.book {
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 10px;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  flex: 1 1 200px; /* Allow books to grow and shrink based on screen size */
+}
+
+.book img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #007bff;
+}
+
+.book h3 {
+  margin: 10px 0;
+  font-size: 1.25rem; /* Responsive font size for book title */
+}
+
+.book p {
+  color: #555;
+  font-size: 0.875rem; /* Responsive font size for description */
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  max-width: 600px; /* Maximum width for modal */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
