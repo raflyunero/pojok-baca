@@ -1,11 +1,15 @@
-// Show loading screen
+// Show loading screen and hide all content
 function showLoading() {
     document.getElementById('loading').style.display = 'flex'; // Display the loading screen
+    document.getElementById('categories').style.display = 'none'; // Hide categories
+    document.getElementById('catalog').style.display = 'none'; // Hide catalog
   }
   
-  // Hide loading screen
+  // Hide loading screen and show all content
   function hideLoading() {
-    document.getElementById('loading').style.display = 'none'; // Hide the loading screen
+    document.getElementById('loading').style.display = 'none'; // Hide loading screen
+    document.getElementById('categories').style.display = 'flex'; // Show categories
+    document.getElementById('catalog').style.display = 'flex'; // Show catalog
   }
   
   function showCategory(category) {
@@ -16,60 +20,42 @@ function showLoading() {
     let books = [];
     if (category === 'education') {
       books = [
-        { title: 'Matematika untuk Anak', description: 'Buku pelajaran matematika dasar untuk SD.' },
-        { title: 'Ilmu Pengetahuan Alam', description: 'Buku IPA untuk kelas 3 SD.' }
+        { title: 'Matematika untuk Anak', description: 'Buku pelajaran matematika dasar untuk SD.', image: "Logo Undip Undip.png" },
+        { title: 'Ilmu Pengetahuan Alam', description: 'Buku IPA untuk kelas 3 SD.',image:"Logo HD.png" },
+        { title: 'Ilmu Pengetahuan Alam', description: 'Buku IPA untuk kelas 2 SD.', image:"Logo Undip Undip.png" },
+        { title: 'Ilmu Pengetahuan Alam', description: 'Buku IPA untuk kelas 1 SD.',image:"Logo HD.png" }
       ];
     } else if (category === 'entertainment') {
       books = [
-        { title: 'Cerita Rakyat Indonesia', description: 'Kumpulan cerita rakyat dari berbagai daerah.' },
-        { title: 'Dongeng sebelum Tidur', description: 'Cerita dongeng yang menghibur.' }
+        { title: 'Cerita Rakyat Indonesia', description: 'Kumpulan cerita rakyat dari berbagai daerah.', image: "Logo Undip Undip.png" },
+        { title: 'Dongeng sebelum Tidur', description: 'Cerita dongeng yang menghibur.',image:"Logo HD.png" }
       ];
     } else if (category === 'nature') {
       books = [
-        { title: 'Dunia Hewan', description: 'Buku mengenal berbagai macam hewan.' },
-        { title: 'Tumbuhan dan Lingkungan', description: 'Buku tentang tanaman dan ekosistem.' }
+        { title: 'Dunia Hewan', description: 'Buku mengenal berbagai macam hewan.',image:"Logo HD.png" },
+        { title: 'Tumbuhan dan Lingkungan', description: 'Buku tentang tanaman dan ekosistem.', image: "Logo Undip Undip.png" }
       ];
     } else if (category === 'history') {
       books = [
-        { title: 'Sejarah Indonesia', description: 'Buku sejarah Indonesia dari masa kerajaan hingga modern.' },
-        { title: 'Sejarah Dunia', description: 'Buku sejarah dunia sejak zaman prasejarah hingga sekarang.' }
-      ];
-    } else if (category === 'sports') {
-      books = [
-        { title: 'Olahraga untuk Anak', description: 'Buku yang mengenalkan berbagai jenis olahraga.' },
-        { title: 'Pentingnya Olahraga', description: 'Mengajarkan manfaat olahraga bagi kesehatan.' }
-      ];
-    } else if (category === 'crafts') {
-      books = [
-        { title: 'Kerajinan Tangan', description: 'Buku tutorial membuat kerajinan tangan dari bahan bekas.' },
-        { title: 'Membuat Alat Musik Sederhana', description: 'Tutorial membuat alat musik dari bahan-bahan alami.' }
-      ];
-    } else if (category === 'health') {
-      books = [
-        { title: 'Kesehatan Anak', description: 'Buku tentang pola makan dan hidup sehat untuk anak.' },
-        { title: 'Menjaga Kesehatan Tubuh', description: 'Informasi tentang cara menjaga tubuh tetap sehat.' }
-      ];
-    } else if (category === 'religion') {
-      books = [
-        { title: 'Cerita Agama Islam', description: 'Cerita-cerita inspiratif dari agama Islam.' },
-        { title: 'Doa Sehari-hari', description: 'Buku kumpulan doa-doa yang diajarkan dalam agama.' }
+        { title: 'Sejarah Indonesia', description: 'Buku sejarah Indonesia dari masa kerajaan hingga modern.', image: "Logo Undip Undip.png" },
+        { title: 'Sejarah Dunia', description: 'Buku sejarah dunia sejak zaman prasejarah hingga sekarang.',image:"Logo HD.png" }
       ];
     }
   
     // Display books based on selected category
-    setTimeout(() => {
-      books.forEach(book => {
+    books.forEach(book => {
         const bookElement = document.createElement('div');
         bookElement.classList.add('book');
         bookElement.innerHTML = `
-          <img src="book-image.jpg" alt="${book.title}">
+          <img src="${book.image}" alt="${book.title}">  <!-- Gunakan gambar spesifik dari objek book -->
           <h3>${book.title}</h3>
           <p>${book.description}</p>
         `;
         catalog.appendChild(bookElement);
       });
-      hideLoading(); // Hide loading screen once books are loaded
-    }, 1000); // Simulating network delay for loading the catalog (1 second)
+      
+  
+    hideLoading(); // Hide loading screen once books are loaded
   }
   
   function closeBookInfo() {
