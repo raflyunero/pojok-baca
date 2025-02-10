@@ -34,7 +34,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    font-size: 1rem;
+    font-size: 0.8rem; /* Ukuran tulisan lebih kecil */
     position: fixed;
     bottom: 0;
     width: 100%;
