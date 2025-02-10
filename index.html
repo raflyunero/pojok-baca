@@ -9,13 +9,6 @@
 </head>
 
 <body>
-
-  <!-- Loading Screen -->
-  <div id="loading" class="loader">
-    <span class="loader-text">Loading...</span>
-    <span class="load"></span>
-  </div>
-
   <header>
     <div class="header-content">
       <div class="logo-left">
@@ -28,6 +21,7 @@
     </div>
   </header>
 
+  <!-- Categories Section -->
   <section id="categories">
     <button onclick="showCategory('education')">Rak A: Pendidikan</button>
     <button onclick="showCategory('entertainment')">Rak B: Hiburan</button>
@@ -35,32 +29,53 @@
     <button onclick="showCategory('history')">Rak D: Sejarah</button>
   </section>
 
-  <section id="catalog">
-    <!-- Books will be displayed here based on the selected category -->
-  </section>
-
-  <!-- Modal for showing book details -->
-  <div id="bookInfoModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeBookInfo()">&times;</span>
-      <h2 id="bookTitle"></h2>
-      <p id="bookDescription"></p>
-    </div>
-  </div>
+  <!-- Catalog Section (Books will be displayed here) -->
+  <section id="catalog"></section>
 
   <!-- Footer -->
   <footer>
     <p>WEBSITE INI DIRANCANG BERSAMA OLEH KKN TIM 1 UNDIP</p>
   </footer>
 
-  <script src="script.js"></script>
   <script>
-    // JavaScript to hide the loader once the page is fully loaded
-    window.onload = function () {
-      document.querySelector('.loader').style.display = 'none'; // Hide the loader
-    };
+    function showCategory(category) {
+      const catalog = document.getElementById('catalog');
+      catalog.innerHTML = '';
+      let books = [];
+
+      if (category === 'education') {
+        books = [
+          { title: 'Matematika untuk Anak', description: 'Buku pelajaran matematika dasar untuk SD.', image: "Logo Undip Undip.png" },
+          { title: 'Ilmu Pengetahuan Alam', description: 'Buku IPA untuk kelas 3 SD.', image: "Logo HD.png" }
+        ];
+      } else if (category === 'entertainment') {
+        books = [
+          { title: 'Cerita Rakyat Indonesia', description: 'Kumpulan cerita rakyat dari berbagai daerah.', image: "Logo Undip Undip.png" },
+          { title: 'Dongeng sebelum Tidur', description: 'Cerita dongeng yang menghibur.', image: "Logo HD.png" }
+        ];
+      } else if (category === 'nature') {
+        books = [
+          { title: 'Dunia Hewan', description: 'Buku mengenal berbagai macam hewan.', image: "Logo HD.png" },
+          { title: 'Tumbuhan dan Lingkungan', description: 'Buku tentang tanaman dan ekosistem.', image: "Logo Undip Undip.png" }
+        ];
+      } else if (category === 'history') {
+        books = [
+          { title: 'Sejarah Indonesia', description: 'Buku sejarah Indonesia dari masa kerajaan hingga modern.', image: "Logo Undip Undip.png" },
+          { title: 'Sejarah Dunia', description: 'Buku sejarah dunia sejak zaman prasejarah hingga sekarang.', image: "Logo HD.png" }
+        ];
+      }
+
+      books.forEach(book => {
+        const bookElement = document.createElement('div');
+        bookElement.classList.add('book');
+        bookElement.innerHTML = `
+          <img src="${book.image}" alt="${book.title}">
+          <h3>${book.title}</h3>
+          <p>${book.description}</p>
+        `;
+        catalog.appendChild(bookElement);
+      });
+    }
   </script>
-
 </body>
-
 </html>
