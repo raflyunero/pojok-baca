@@ -1,37 +1,36 @@
 /* Global styles */
 body {
-    font-family: 'Fredoka One', sans-serif; /* Menggunakan font yang menarik bagi anak SD */
+    font-family: 'Fredoka One', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    box-sizing: border-box; /* Apply box-sizing globally */
-    text-align: center; /* Center all text by default */
+    box-sizing: border-box;
+    text-align: center;
 }
 
-/* Tambahkan link ke Google Fonts di dalam <head> HTML */
+/* Tambahkan link ke Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 header {
     background-color: #2963a1;
     color: white;
-    padding: 15px 10px; /* Adjust padding for header */
+    padding: 15px 10px;
     text-align: center;
-    height: auto; /* Make header height flexible */
     display: flex;
-    align-items: center; /* Vertically align the content */
-    justify-content: center; /* Center the content horizontally */
-    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 h1 {
-    font-size: 2vw; /* Font size relative to viewport width */
+    font-size: 2vw;
     margin: 0;
-    word-wrap: break-word; /* Ensure text wraps properly on small screens */
+    word-wrap: break-word;
 }
 
 /* Footer styles */
 footer {
-    background-color: #2963a1; /* Same as header color */
+    background-color: #2963a1;
     color: white;
     text-align: center;
     padding: 10px;
@@ -54,55 +53,41 @@ footer p {
 }
 
 .logo-left img, .logo-right img {
-    width: 15vw; /* Resize logos based on viewport width */
+    width: 15vw;
     height: auto;
-    max-width: 90px; /* Ensure logos do not get too large */
+    max-width: 90px;
 }
 
+/* Kategori */
 #categories {
     margin: 20px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    flex-wrap: wrap;
 }
 
 #categories button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 8px 16px; /* Menurunkan padding untuk membuat tombol lebih kecil */
+    padding: 8px 16px;
     margin: 5px;
     cursor: pointer;
-    font-size: 1rem; /* Menggunakan ukuran font yang lebih kecil dari sebelumnya */
-    min-width: 120px; /* Menjaga tombol tetap memiliki lebar minimum */
-    border-radius: 15px; /* Sudut tombol tetap membulat */
+    font-size: 1rem;
+    min-width: 120px;
+    border-radius: 15px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
-@media (max-width: 768px) {
-    #categories button {
-        font-size: 3.5vw; /* Menurunkan ukuran font agar lebih kecil pada layar lebih kecil */
-        padding: 6px 12px; /* Mengurangi padding untuk tombol lebih kecil */
-        min-width: 90px; /* Menurunkan lebar minimum tombol pada layar kecil */
-    }
-}
-
-@media (max-width: 480px) {
-    #categories button {
-        font-size: 5vw; /* Ukuran font sedikit lebih besar untuk layar sangat kecil, tapi tetap proporsional */
-        padding: 6px 12px; /* Menjaga tombol tetap lebih kecil pada layar kecil */
-    }
-}
-
 
 #categories button:hover {
     background-color: #0056b3;
 }
 
+/* Katalog Buku */
 #catalog {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center catalog items */
+    justify-content: center;
     padding: 20px;
 }
 
@@ -115,7 +100,12 @@ footer p {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    flex: 1 1 200px; /* Allow books to grow and shrink based on screen size */
+    flex: 1 1 200px;
+    transition: transform 0.3s ease;
+}
+
+.book:hover {
+    transform: scale(1.05);
 }
 
 .book img {
@@ -126,81 +116,45 @@ footer p {
 
 .book h3 {
     margin: 10px 0;
-    font-size: 1.25rem; /* Responsive font size for book title */
+    font-size: 1.25rem;
 }
 
 .book p {
     color: #555;
-    font-size: 0.875rem; /* Responsive font size for description */
+    font-size: 0.875rem;
 }
 
-/* Modal styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 60%;
-    max-width: 600px; /* Maximum width for modal */
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Responsive design for small screens */
+/* Responsive Design */
 @media (max-width: 768px) {
     h1 {
-        font-size: 5vw; /* Larger font size for small screens */
+        font-size: 5vw;
     }
 
     .header-content {
-        flex-direction: column; /* Stack the header content vertically */
+        flex-direction: column;
         align-items: center;
     }
 
     .logo-left img, .logo-right img {
-        width: 25vw; /* Resize logos for smaller screens */
+        width: 25vw;
     }
 
     #categories button {
-        font-size: 4vw; /* Increase button font size on smaller screens */
-        min-width: 100px; /* Adjust minimum button width */
+        font-size: 4vw;
+        min-width: 100px;
     }
 
     .book {
-        max-width: 90%; /* Allow books to take up more width on small screens */
+        max-width: 90%;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 7vw; /* Even larger font size for very small screens */
+        font-size: 7vw;
     }
 
     #categories button {
-        font-size: 5vw; /* Larger button font for very small screens */
+        font-size: 5vw;
     }
 }
