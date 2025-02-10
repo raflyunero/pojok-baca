@@ -23,6 +23,12 @@ header {
     flex-wrap: wrap; /* Allow content to wrap on smaller screens */
 }
 
+h1 {
+    font-size: 2vw; /* Font size relative to viewport width */
+    margin: 0;
+    word-wrap: break-word; /* Ensure text wraps properly on small screens */
+}
+
 /* Footer styles */
 footer {
     background-color: #2963a1; /* Same as header color */
@@ -47,29 +53,13 @@ footer p {
     max-width: 1200px;
 }
 
-h1 {
-    flex-grow: 1;
-    font-size: 2rem; /* Auto size font */
-    margin: 0;
-    text-align: center;
-    word-wrap: break-word; /* Ensure text wraps properly on small screens */
-}
-
-.logo-left img {
-    width: 20vw; /* Auto resize logo based on viewport width */
+.logo-left img, .logo-right img {
+    width: 15vw; /* Resize logos based on viewport width */
     height: auto;
     max-width: 90px; /* Ensure logos do not get too large */
 }
 
-.logo-right img {
-    width: 20vw; /* Increase width of the right logo */
-    height: auto;
-    max-width: 120px; /* Ensure logos do not get too large */
-    margin-left: -10px; /* Geser logo kanan sedikit ke kiri */
-}
-
 #categories {
-    text-align: center;
     margin: 20px;
     display: flex;
     justify-content: center;
@@ -80,14 +70,30 @@ h1 {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 12px 24px;
+    padding: 8px 16px; /* Menurunkan padding untuk membuat tombol lebih kecil */
     margin: 5px;
     cursor: pointer;
-    font-size: 1rem; /* Make button font size responsive */
-    min-width: 120px; /* Minimum width for buttons */
-    border-radius: 15px; /* Add corner radius for rounded buttons */
+    font-size: 1rem; /* Menggunakan ukuran font yang lebih kecil dari sebelumnya */
+    min-width: 120px; /* Menjaga tombol tetap memiliki lebar minimum */
+    border-radius: 15px; /* Sudut tombol tetap membulat */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+@media (max-width: 768px) {
+    #categories button {
+        font-size: 3.5vw; /* Menurunkan ukuran font agar lebih kecil pada layar lebih kecil */
+        padding: 6px 12px; /* Mengurangi padding untuk tombol lebih kecil */
+        min-width: 90px; /* Menurunkan lebar minimum tombol pada layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    #categories button {
+        font-size: 5vw; /* Ukuran font sedikit lebih besar untuk layar sangat kecil, tapi tetap proporsional */
+        padding: 6px 12px; /* Menjaga tombol tetap lebih kecil pada layar kecil */
+    }
+}
+
 
 #categories button:hover {
     background-color: #0056b3;
@@ -162,4 +168,39 @@ h1 {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 5vw; /* Larger font size for small screens */
+    }
+
+    .header-content {
+        flex-direction: column; /* Stack the header content vertically */
+        align-items: center;
+    }
+
+    .logo-left img, .logo-right img {
+        width: 25vw; /* Resize logos for smaller screens */
+    }
+
+    #categories button {
+        font-size: 4vw; /* Increase button font size on smaller screens */
+        min-width: 100px; /* Adjust minimum button width */
+    }
+
+    .book {
+        max-width: 90%; /* Allow books to take up more width on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 7vw; /* Even larger font size for very small screens */
+    }
+
+    #categories button {
+        font-size: 5vw; /* Larger button font for very small screens */
+    }
 }
