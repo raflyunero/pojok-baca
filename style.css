@@ -5,140 +5,12 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     box-sizing: border-box; /* Apply box-sizing globally */
+    text-align: center; /* Center all text by default */
 }
 
 /* Tambahkan link ke Google Fonts di dalam <head> HTML */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-/* Loading Screen */
-.loader {
-  width: 80px;
-  height: 50px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999; /* Ensure loader is on top */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loader-text {
-  position: absolute;
-  top: 0;
-  padding: 0;
-  margin: 0;
-  color: #C8B6FF;
-  animation: text_713 3.5s ease both infinite;
-  font-size: .8rem;
-  letter-spacing: 1px;
-}
-
-.load {
-  background-color: #9A79FF;
-  border-radius: 50px;
-  display: block;
-  height: 16px;
-  width: 16px;
-  bottom: 0;
-  position: absolute;
-  transform: translateX(64px);
-  animation: loading_713 3.5s ease both infinite;
-}
-
-.load::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #D1C2FF;
-  border-radius: inherit;
-  animation: loading2_713 3.5s ease both infinite;
-}
-
-@keyframes text_713 {
-  0% {
-    letter-spacing: 1px;
-    transform: translateX(0px);
-  }
-
-  40% {
-    letter-spacing: 2px;
-    transform: translateX(26px);
-  }
-
-  80% {
-    letter-spacing: 1px;
-    transform: translateX(32px);
-  }
-
-  90% {
-    letter-spacing: 2px;
-    transform: translateX(0px);
-  }
-
-  100% {
-    letter-spacing: 1px;
-    transform: translateX(0px);
-  }
-}
-
-@keyframes loading_713 {
-  0% {
-    width: 16px;
-    transform: translateX(0px);
-  }
-
-  40% {
-    width: 100%;
-    transform: translateX(0px);
-  }
-
-  80% {
-    width: 16px;
-    transform: translateX(64px);
-  }
-
-  90% {
-    width: 100%;
-    transform: translateX(0px);
-  }
-
-  100% {
-    width: 16px;
-    transform: translateX(0px);
-  }
-}
-
-@keyframes loading2_713 {
-  0% {
-    transform: translateX(0px);
-    width: 16px;
-  }
-
-  40% {
-    transform: translateX(0%);
-    width: 80%;
-  }
-
-  80% {
-    width: 100%;
-    transform: translateX(0px);
-  }
-
-  90% {
-    width: 80%;
-    transform: translateX(15px);
-  }
-
-  100% {
-    transform: translateX(0px);
-    width: 16px;
-  }
-}
-
-/* Header styles */
 header {
     background-color: #2963a1;
     color: white;
@@ -149,6 +21,22 @@ header {
     align-items: center; /* Vertically align the content */
     justify-content: center; /* Center the content horizontally */
     flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+/* Footer styles */
+footer {
+    background-color: #2963a1; /* Same as header color */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
 }
 
 .header-content {
@@ -180,7 +68,6 @@ h1 {
     margin-left: -10px; /* Geser logo kanan sedikit ke kiri */
 }
 
-/* Categories section */
 #categories {
     text-align: center;
     margin: 20px;
@@ -198,7 +85,7 @@ h1 {
     cursor: pointer;
     font-size: 1rem; /* Make button font size responsive */
     min-width: 120px; /* Minimum width for buttons */
-    border-radius:25px; /* Add corner radius for rounded buttons */
+    border-radius: 15px; /* Add corner radius for rounded buttons */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -206,11 +93,10 @@ h1 {
     background-color: #0056b3;
 }
 
-/* Catalog section */
 #catalog {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; /* Center catalog items */
     padding: 20px;
 }
 
