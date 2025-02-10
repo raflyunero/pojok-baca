@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Katalog Buku Pojok Baca</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- Loading Screen -->
-  <div class="loader">
-    <span class="loader-text">loading</span>
+  <div id="loading" class="loader">
+    <span class="loader-text">Loading...</span>
     <span class="load"></span>
   </div>
 
@@ -27,20 +29,17 @@
   </header>
 
   <section id="categories">
-    <button onclick="showCategory('education')">Pendidikan</button>
-    <button onclick="showCategory('entertainment')">Hiburan</button>
-    <button onclick="showCategory('nature')">Alam</button>
-    <button onclick="showCategory('history')">Sejarah</button>
-    <button onclick="showCategory('sports')">Olahraga</button>
-    <button onclick="showCategory('crafts')">Keterampilan</button>
-    <button onclick="showCategory('health')">Kesehatan</button>
-    <button onclick="showCategory('religion')">Agama</button>
+    <button onclick="showCategory('education')">Rak A: Pendidikan</button>
+    <button onclick="showCategory('entertainment')">Rak B: Hiburan</button>
+    <button onclick="showCategory('nature')">Rak C: Alam</button>
+    <button onclick="showCategory('history')">Rak D: Sejarah</button>
   </section>
 
   <section id="catalog">
     <!-- Books will be displayed here based on the selected category -->
   </section>
 
+  <!-- Modal for showing book details -->
   <div id="bookInfoModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeBookInfo()">&times;</span>
@@ -49,12 +48,19 @@
     </div>
   </div>
 
+  <!-- Footer -->
+  <footer>
+    <p>WEBSITE INI DIRANCANG BERSAMA OLEH KKN TIM 1 UNDIP</p>
+  </footer>
+
   <script src="script.js"></script>
   <script>
     // JavaScript to hide the loader once the page is fully loaded
-    window.onload = function() {
+    window.onload = function () {
       document.querySelector('.loader').style.display = 'none'; // Hide the loader
     };
   </script>
+
 </body>
+
 </html>
